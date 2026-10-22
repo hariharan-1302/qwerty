@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c9a227;
+  --gold-soft: #e6c76b;
+  --gold-line: rgba(201, 162, 39, 0.35);
+  --ink-light: #f4efe2;
+  --text: #cfd4de;
+  --muted: #8a94a8;
+  --navy-deep: #050a14;
+  --navy: #0b1628;
+  --navy-panel: #13223d;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top right, #1d3561 0%, transparent 45%),
+    radial-gradient(ellipse at bottom left, #101d36 0%, transparent 50%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 75%) !important;
+  color: var(--text) !important;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', Georgia, serif !important;
+  color: var(--ink-light) !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  text-align: center;
+  border: none;
+  display: block;
+}
+
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+
+/* Gold accent words, e.g. <h1>Welcome, <span>Mithran</span></h1> */
+h1 span,
+h2 span,
+.accent {
+  color: var(--gold) !important;
+}
+
+p {
+  color: var(--muted) !important;
+  font-weight: 300;
+}
+
+small,
+.label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold) !important;
+  font-weight: 500;
+}
+
+/* Navbar / header */
+nav,
+header,
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: rgba(5, 10, 20, 0.92) !important;
+  border-bottom: 1px solid var(--gold-line) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+nav a,
+header a,
+.navbar a {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-light) !important;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+header a:hover,
+.navbar a:hover {
+  color: var(--gold-soft) !important;
+}
+
+/* Brand block on the left */
+.brand,
+.logo,
+.navbar-brand {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--gold) !important;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Buttons: outlined gold, fills on hover */
+button,
+.btn,
+a.button,
+input[type="submit"] {
+  font-family: 'Cinzel', Georgia, serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem !important;
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover,
+input[type="submit"]:hover {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+}
+
+/* Primary button, used for submit or main call to action */
+button[type="submit"],
+.btn-primary {
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold)) !important;
+  color: var(--navy-deep) !important;
+  width: 100%;
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Cards, panels, and forms */
+.card,
+.stat-card,
+.panel,
+.container,
+main section,
+section,
+form {
+  background: linear-gradient(145deg, rgba(19, 34, 61, 0.7), rgba(8, 15, 30, 0.92)) !important;
+  border: 1px solid var(--gold-line) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  padding: 2rem;
+  text-align: center;
+}
+
+.stat-card {
+  padding: 1.8rem 1rem;
+}
+
+.stat-card .label {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.stat-card .value {
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.stat-card .value.highlight {
+  color: var(--gold) !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.9rem !important;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1rem;
+  background: rgba(5, 10, 20, 0.6) !important;
+  color: var(--ink-light) !important;
+  border: 1px solid rgba(201, 162, 39, 0.3) !important;
+  border-radius: 0 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold) !important;
+  margin-bottom: 0.4rem;
+}
+
+/* Gold ornament divider under titles */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 1.2rem auto;
+  color: var(--gold);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.divider::before { margin-right: 4px; }
+.divider::after { margin-left: 4px; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+/* ---------- Home page button: navy and gold, no white ---------- */
+
+a[href="/dashboard"],
+.hero a,
+.home a,
+.home button,
+.hero button {
+  display: inline-block;
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.8rem 2rem !important;
+  font-family: 'Cinzel', Georgia, serif !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+a[href="/dashboard"]:hover,
+.hero a:hover,
+.home a:hover,
+.home button:hover,
+.hero button:hover {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+}
+
+/* Logout button: same gold outline, no pink */
+nav button,
+header button,
+.navbar button {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+}
+
+nav button:hover,
+header button:hover,
+.navbar button:hover {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+}
+/* ---------- Login/Register: no white ---------- */
+
+/* Outer card that wraps the form */
+div:has(> form) {
+  background: linear-gradient(145deg, rgba(19, 34, 61, 0.85), rgba(5, 10, 20, 0.95)) !important;
+  border: 1px solid rgba(201, 162, 39, 0.35) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Heading inside that card, e.g. "Welcome back" */
+div:has(> form) h1,
+div:has(> form) h2,
+div:has(> form) h3 {
+  color: var(--ink-light) !important;
+  text-shadow: none !important;
+  background: none !important;
+}
+
+/* Navbar Register button: outlined gold instead of white pill */
+nav a[href="/register"],
+header a[href="/register"],
+.navbar a[href="/register"],
+a[href="/register"] {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.5rem 1.2rem !important;
+  font-family: 'Cinzel', Georgia, serif !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+a[href="/register"]:hover {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+}
+
+/* "New here? Create an account" link: gold, not pink */
+form ~ p a,
+div:has(> form) p a,
+div:has(> form) a {
+  color: var(--gold-soft) !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(230, 199, 107, 0.4);
+  background: none !important;
+}
+
+div:has(> form) a:hover {
+  color: var(--gold) !important;
+}
+
+/* Muted text inside the card */
+div:has(> form) p {
+  color: var(--muted) !important;
+}

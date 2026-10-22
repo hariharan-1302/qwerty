@@ -1,0 +1,84 @@
+/* ---------- Dashboard color accents ---------- */
+
+:root {
+  --sapphire: #2a4f8f;
+  --emerald: #1f6b57;
+  --burgundy: #7a1f35;
+  --amethyst: #5b3a7d;
+  --gold-glow: rgba(230, 199, 107, 0.25);
+}
+
+/* Warm glow behind the welcome area */
+main section:first-of-type,
+.welcome,
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(122, 31, 53, 0.35), transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(31, 107, 87, 0.25), transparent 55%),
+    linear-gradient(145deg, rgba(19, 34, 61, 0.7), rgba(8, 15, 30, 0.92)) !important;
+}
+
+/* Gold-to-rose gradient on the greeting name */
+h1 span,
+.welcome h1 span {
+  background: linear-gradient(90deg, var(--gold-soft), #d98c7a, var(--gold-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Each stat card gets its own jewel tone */
+.stat-card:nth-of-type(1),
+.stat-card:nth-child(1) {
+  background: linear-gradient(145deg, rgba(42, 79, 143, 0.55), rgba(8, 15, 30, 0.92)) !important;
+  border-color: rgba(120, 160, 230, 0.45) !important;
+}
+
+.stat-card:nth-of-type(2),
+.stat-card:nth-child(2) {
+  background: linear-gradient(145deg, rgba(31, 107, 87, 0.5), rgba(8, 15, 30, 0.92)) !important;
+  border-color: rgba(110, 200, 170, 0.45) !important;
+}
+
+.stat-card:nth-of-type(3),
+.stat-card:nth-child(3) {
+  background: linear-gradient(145deg, rgba(122, 31, 53, 0.5), rgba(8, 15, 30, 0.92)) !important;
+  border-color: rgba(230, 130, 150, 0.45) !important;
+}
+
+/* Glowing gold icons */
+.icon,
+.stat-card svg,
+.card svg {
+  color: var(--gold-soft);
+  filter: drop-shadow(0 0 8px var(--gold-glow));
+}
+
+/* Status highlight becomes a pill */
+.stat-card .value.highlight {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--gold);
+  background: rgba(201, 162, 39, 0.12);
+  border-radius: 999px;
+}
+
+/* Feature panel gets an amethyst wash */
+.card:last-of-type,
+.feature-panel {
+  background:
+    radial-gradient(ellipse at top, rgba(91, 58, 125, 0.35), transparent 65%),
+    linear-gradient(145deg, rgba(19, 34, 61, 0.7), rgba(8, 15, 30, 0.92)) !important;
+}
+
+/* Hover lift on cards */
+.stat-card,
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover,
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px var(--gold-glow);
+}
